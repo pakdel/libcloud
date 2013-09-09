@@ -363,9 +363,9 @@ class CloudStackNodeDriver(CloudStackDriverMixIn, NodeDriver):
                 public_ips.append(nic['ipaddress'])
 
         keypair, password = None, None
-        if keypair in node.keys():
+        if 'keypair' in node.keys():
             keypair = node['keypair']
-        if password in node.keys():
+        if 'password' in node.keys():
             password = node['password']
 
         return CloudStackNode(
